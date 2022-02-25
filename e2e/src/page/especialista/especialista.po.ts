@@ -10,36 +10,35 @@ export class EspecialistaPage {
     private btnCrearEspecialista = element(by.id('btnCrearEspecialista'));
     private listaEspecialistas = element.all(by.css('tr.especialistas td.nombres'));
 
-async clickBotonCrearEspecialista() {
-    await this.linkCrearEspecialista.click();
-}
+    async clickBotonCrearEspecialista() {
+        await this.linkCrearEspecialista.click();
+    }
 
-async clickBotonListarEspecialistas() {
-    await this.linkListarEspecialista.click();
-}
+    async clickBotonListarEspecialistas() {
+        await this.linkListarEspecialista.click();
+    }
 
-async ingresarNombreEspecialistas(nombreEspecialistas) {
-    await this.inputNombreEspecialista.sendKeys(nombreEspecialistas);
-}
+    async ingresarNombreEspecialistas(nombreEspecialistas) {
+        await this.inputNombreEspecialista.sendKeys(nombreEspecialistas);
+    }
 
-async ingresarEspecialidad(especialidad) {
-    await this.inputEspecialidad.sendKeys(especialidad);
-}
+    async ingresarEspecialidad(especialidad) {
+        await this.inputEspecialidad.sendKeys(especialidad);
+    }
 
-async ingresarTarifa(tarifa) {
-    await this.inputTarifa.sendKeys(tarifa);
-}
+    async ingresarTarifa(tarifa) {
+        await this.inputTarifa.sendKeys(tarifa);
+    }
 
-async ingresarAgendables(maximoDiasAgendables) {
-    await this.inputAgendables.sendKeys(maximoDiasAgendables);
-}
+    async ingresarAgendables(maximoDiasAgendables) {
+        await this.inputAgendables.sendKeys(maximoDiasAgendables);
+    }
 
-async contarEspecialistas() {
-    return await this.listaEspecialistas.count();
-}
+    async contarEspecialistas() {
+        return await this.listaEspecialistas.count();
+    }
 
-async crearEspecialistas(){
-    await this.btnCrearEspecialista.click();
-}
-
+    async crearEspecialistas() {
+        await this.btnCrearEspecialista.click();
+    }
 }
