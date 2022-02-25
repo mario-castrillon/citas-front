@@ -1,0 +1,70 @@
+<div class="container border border-dark rounded">
+    <h1 class="text-center">Registrar Especialista</h1>
+    <h3 class="text-center">Ingrese los datos</h3>
+    <hr>
+    <form [formGroup]="especialistaForm" (ngSubmit)="crear()">
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-2">
+                <label>Nombre:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="nombreEspecialista" name="nombreEspecialista"
+                    placeholder="Nombre del especialista" class="form-control" formControlName="nombreEspecialista">
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-2">
+                <label>Especialidad:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="especialidad" name="especialidad" placeholder="Especialidad"
+                    class="form-control" formControlName="especialidad">
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-2">
+                <label>Tarifa:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="tarifa" name="tarifa" placeholder="Tarifa" class="form-control"
+                    formControlName="tarifa">
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-2">
+                <label>Agendables:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="maximoDiasAgendables" name="maximoDiasAgendables"
+                    placeholder="Máximo de dias agendables" class="form-control" formControlName="maximoDiasAgendables">
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-4">
+                <br>
+                <p *ngIf="mostrarError" class="text-md-center text-danger">{{ mensajeError }}</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm-4">
+                <button type="submit" class="btn-primary form-control" id="btnCrearEspecialista"
+                    [disabled]="especialistaForm.invalid">
+                    Crear Especialista
+                </button>
+                <br>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-danger form-control" routerLink="/especialista/listar">
+                  Cancelar
+                </button>
+                <br>
+              </div>
+        </div>
+    </form>
+</div>

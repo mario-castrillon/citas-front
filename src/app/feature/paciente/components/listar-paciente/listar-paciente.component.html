@@ -1,0 +1,26 @@
+<div class="container border border-dark rounded">
+  <h3 class="text-center">Lista de Pacientes</h3>
+  <div id="pacientes">
+    <table class="table table-responsive table-hover table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Cédula</th>
+          <th class="text-center">Nombre Completo</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pacientes" *ngFor="let paciente of listaPacientes | async">
+          <td class="text-center">{{ paciente.cedula }}</td>
+          <td class="nombres">{{ paciente.nombrePaciente }}</td>
+          <td align="center">
+            <button class="btn btn-primary mx-1" (click)="seleccionarPaciente(paciente,'actualizar')"><i
+              class="bi bi-pencil"></i></button>
+            <button class="btn btn-danger mx-1" (click)="seleccionarPaciente(paciente,'eliminar')"><i
+              class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

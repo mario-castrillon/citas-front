@@ -1,0 +1,36 @@
+<div class="container border border-dark rounded">
+  <h3 class="text-center">Lista de Especialistas</h3>
+  <div id="especialistaslistado">
+    <table class="table table-responsive table-hover table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Especialidad</th>
+          <th class="text-center">Tarifa</th>
+          <th class="text-center">Agendables</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="especialistas" *ngFor="let especialista of listaEspecialistas | async">
+          <td class="nombres">{{ especialista.nombreEspecialista }}</td>
+          <td class="especialidades">{{ especialista.especialidad }}</td>
+          <td class="tarifas">{{ especialista.tarifa | currency:'COP':'symbol-narrow':'1.0-0' }}</td>
+          <td class="agendables">
+            {{ especialista.maximoDiasAgendables }}
+            <button class="btn btn-primary mx-1" (click)="mostarDiasAgendables(especialista)">
+              <i class="bi bi-calendar-range"></i>
+            </button>
+          </td>
+          <td align="center">
+            <button class="btn btn-primary mx-1" (click)="seleccionarEspecialista(especialista,'actualizar')">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-danger mx-1" (click)="seleccionarEspecialista(especialista,'eliminar')"><i
+                class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

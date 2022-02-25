@@ -1,0 +1,26 @@
+<div class="container border border-dark rounded">
+    <div class="text-center">
+        <h1>Dias Agendables</h1>
+        <h2>Especialista: {{ especialista.nombreEspecialista }}</h2>
+    </div>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center">Días disponibles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let diaAgendable of diasAgendables">
+                <td class="text-center">{{ diaAgendable | date :'fullDate'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-5">
+            <button type="button" class="btn btn-danger mt-3 mx-1 form-control" routerLink="/especialista/listar">
+                Volver al listado
+            </button>
+            <br>
+        </div>
+    </div>
+</div>

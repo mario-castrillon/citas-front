@@ -1,0 +1,32 @@
+<div class="container border border-dark rounded">
+    <div>
+        <h1 class="text-center">Confirmación de Borrado</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col font-weight-bold">
+            <label>Fecha:</label>
+        </div>
+        <div class="col">
+            {{ cita.fecha }}
+        </div>
+
+        <div class="col font-weight-bold">
+            <label>Paciente:</label>
+        </div>
+        <div class="col">
+            {{ cita.nombrePaciente }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary mt-3 mx-1 form-control"
+                (click)="eliminarCita(cita.id)">Confirmar</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-danger mt-3 mx-1 form-control"
+                routerLink="/cita/listar">Cancelar</button>
+        </div>
+        <br><br><br>
+    </div>
+</div>

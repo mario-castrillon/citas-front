@@ -1,0 +1,6 @@
+{
+  "/citas": {
+    "target": "http://localhost:8033",
+    "logLevel": "debug"
+  }
+}

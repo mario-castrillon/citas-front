@@ -1,0 +1,4 @@
+<nav class="text-center">
+  <a *ngFor="let item of items" [routerLink]="item.url" routerLinkActive="active">{{item.nombre}}</a>
+</nav>
+<router-outlet></router-outlet>

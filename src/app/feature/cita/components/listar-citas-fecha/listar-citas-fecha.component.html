@@ -1,0 +1,32 @@
+<div class="container border border-dark rounded">
+    <h3 class="text-center">Lista de Citas</h3>
+    <div id="citasMedicas">
+        <table class="table table-responsive table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">Fecha</th>
+                    <th class="text-center">Paciente</th>
+                    <th class="text-center">Cédula</th>
+                    <th class="text-center">Especialista</th>
+                    <th class="text-center">Especialidad</th>
+                    <th class="text-center">Tarifa</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="citas" *ngFor="let cita of listaCitas | async">
+                    <td class="fecha">{{ cita.fecha }}</td>
+                    <td class="paciente">{{ cita.nombrePaciente }}</td>
+                    <td class="cedula">{{ cita.cedula }}</td>
+                    <td class="especialista">{{ cita.nombreEspecialista }}</td>
+                    <td class="especialidad">{{ cita.especialidad }}</td>
+                    <td class="tarifa">{{ cita.tarifa | currency:'COP':'symbol-narrow':'1.0-0' }}</td>
+                    <td align="center">
+                        <button class="btn btn-danger mx-1" (click)="seleccionarCita(cita)"><i
+                                class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
