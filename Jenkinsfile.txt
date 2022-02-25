@@ -7,7 +7,7 @@ pipeline {
      
     stage('Install') {
       steps {
-        sh 'npm install --forced'
+        sh 'npm install'
       }
     }  
 
@@ -26,13 +26,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm run test'
-      }
-    }
-
-    stage('Test coverage') {
-      steps {
-        sh 'npm run test:coverage'
+        sh 'npm run test -- --watch=false --browsers ChromeHeadless'
       }
     }
 
@@ -45,9 +39,9 @@ pipeline {
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-        withSonarQubeEnv('Sonar') {
-          sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
-        }
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:mario.ADNCitasMedicasFRONT.mario.castrillon',
+                                     sonarName:'CeibaADN-ADNCitasMedicasFRONT-mario.castrillon',
+                                     sonarPathProperties:'./sonar-project.properties')
 
       }
    }
